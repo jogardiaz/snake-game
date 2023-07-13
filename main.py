@@ -38,14 +38,18 @@ while game_on:
     #collition with wall
     if snake_jogui.head.xcor() > 280 or snake_jogui.head.xcor() < -280 or \
             snake_jogui.head.ycor() > 280 or snake_jogui.head.ycor() < -280:
-        score.game_over()
-        game_on = False
+        # score.game_over()
+        # game_on = False
+        score.reset()
+        snake_jogui.reset()
 
     #collition with own tail
     for segment in snake_jogui.segments[1:]:
         if snake_jogui.head.distance(segment) < 10:
-            score.game_over()
-            game_on = False
+            # score.game_over()
+            # game_on = False
+            score.reset()
+            snake_jogui.reset()
 
 
 screen.exitonclick()
